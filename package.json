@@ -1,0 +1,25 @@
+{
+  "name": "js-book-exercises",
+  "version": "1.0.0",
+  "description": "Exersicises on pure js. Development environment - nodejs",
+  "main": "choose-script.js",
+  "scripts": {
+    "start": "node choose-script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xenikopa/js-book-exercises.git"
+  },
+  "keywords": [
+    "js-exercises",
+    "javascript",
+    "pure-js",
+    "javascript-exercises"
+  ],
+  "author": "Kseniia Korelskaia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xenikopa/js-book-exercises/issues"
+  },
+  "homepage": "https://github.com/xenikopa/js-book-exercises#readme"
+}
