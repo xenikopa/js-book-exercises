@@ -36,6 +36,10 @@ const colorRed = "\x1b[31m%s\x1b[0m";
     });
 })();
 
+/**
+ * Execute choosen script
+ * @param {Array<string>} files 
+ */
 let execScript = (files) => {
     let tryAgain = () => {
         rl.question('Wrong index. Do you want to try again? Y/n ', (answer) => {
@@ -64,8 +68,8 @@ let execScript = (files) => {
 
         rl.question('What do you want to exec? Write index of script: ', (answer) => {
             if (isValidIndex(answer)) {
-                tryExecute(jsFiles[answer]);
                 rl.close();
+                tryExecute(files[answer]);
             } else {
                 tryAgain();
             }
