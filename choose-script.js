@@ -9,7 +9,7 @@ const colorCyan = "\x1b[36m%s\x1b[0m";
 const colorPurple = "\x1b[35m%s\x1b[0m";
 const colorRed = "\x1b[31m%s\x1b[0m";
 
-(function(){
+void function(){
     let messageEmptyDir = () => {
         console.log(colorRed, 'Sorry, there are no scripts in "scripts" directory.')
         console.log(colorCyan, 'Change it and create first script on javascript in "scripts" dir!');
@@ -30,11 +30,12 @@ const colorRed = "\x1b[31m%s\x1b[0m";
             jsFiles.forEach((file, index) => {
                 console.log(colorCyan, `[${index}]: ${file}`); 
             });
+            console.log(colorRed, `[!]: exit`)
 
             execScript(jsFiles);
         }
     });
-})();
+}();
 
 /**
  * Execute choosen script
@@ -67,6 +68,10 @@ let execScript = (files) => {
         }
 
         rl.question('What do you want to exec? Write index of script: ', (answer) => {
+            if (answer === '!') {
+                rl.close();
+                return;
+            }
             if (isValidIndex(answer)) {
                 rl.close();
                 tryExecute(files[answer]);

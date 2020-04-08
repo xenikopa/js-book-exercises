@@ -4,7 +4,7 @@
 * “Создайте страницу, которая спрашивает имя у пользователя и выводит его.”
 * Excerpt From: Ilya Kantor. “Язык программирования JavaScript”. Apple Books. 
 */
-(function() {
+void function() {
     let rl = require('readline');
     let r = rl.createInterface({
         input: process.stdin,
@@ -14,4 +14,4 @@
         r.close();
         console.log('> Welcome, ' + answer);
     });
-})()
+}()

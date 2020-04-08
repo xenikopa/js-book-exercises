@@ -98,9 +98,9 @@ let rewriteFunctions = function() {
 };
 
 
-(function(){
+void function(){
     ask('Какое «официальное» название JavaScript?', validateJsName)
         .then(x => console.log(x))
         .then(() => ask('Write any number', getNumberSign))
         .then(x => console.log(x))
-})();
+}();

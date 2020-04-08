@@ -9,7 +9,7 @@
  * Excerpt From: Ilya Kantor. “Язык программирования JavaScript”. Apple Books. 
  */
 
-(function() {
+void function() {
     let admin;
     let name;
 
@@ -17,4 +17,4 @@
     admin = name;
 
     console.log(admin);
-})()
+}()
