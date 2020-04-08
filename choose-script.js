@@ -4,15 +4,13 @@ const path = require('path');
 const fs = require('fs');
 const scriptsDir = path.join(__dirname, 'scripts');
 const readline = require('readline');
+const color = require('./scripts/helpers/getColor');
 
-const colorCyan = "\x1b[36m%s\x1b[0m";
-const colorPurple = "\x1b[35m%s\x1b[0m";
-const colorRed = "\x1b[31m%s\x1b[0m";
 
 void function(){
     let messageEmptyDir = () => {
-        console.log(colorRed, 'Sorry, there are no scripts in "scripts" directory.')
-        console.log(colorCyan, 'Change it and create first script on javascript in "scripts" dir!');
+        console.log(color('red'), 'Sorry, there are no scripts in "scripts" directory.')
+        console.log(color('cyan'), 'Change it and create first script on javascript in "scripts" dir!');
     }
 
     fs.readdir(scriptsDir, (err, files) => {
@@ -25,12 +23,12 @@ void function(){
         if (jsFiles.length === 0) {
             messageEmptyDir();
         } else {
-            console.log(colorPurple, '> Choose script to run:');
+            console.log(color('purple'), '> Choose script to run:');
 
             jsFiles.forEach((file, index) => {
-                console.log(colorCyan, `[${index}]: ${file}`); 
+                console.log(color('cyan'), `[${index}]: ${file}`); 
             });
-            console.log(colorRed, `[!]: exit`)
+            console.log(color('red'), `[!]: exit`)
 
             execScript(jsFiles);
         }
@@ -63,7 +61,7 @@ let execScript = (files) => {
             try {
                 require(`${__dirname}/scripts/${fileName}`)
             } catch (err) {
-                console.log(colorRed, err);
+                console.log(color('red'), err.message);
             }
         }
 
